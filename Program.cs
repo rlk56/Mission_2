@@ -2,7 +2,7 @@
 
 class DiceSimulator
 {
-    static void Main()
+    public static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the dice throwing simulator!\n\n");
         Console.Write("How many dice rolls would you like to simulate? ");
@@ -15,10 +15,10 @@ class DiceSimulator
         Console.WriteLine("Each \"*\" represents 1% of the total number of rolls.\n");
         Console.WriteLine($"Total number of rolls = {numRolls}.\n");
 
-        for (int i = 2; i <= 12; i++)
+        for (int iNum = 2; iNum <= 12; iNum++)
         {
-            int percentage = results[i] * 100 / numRolls;
-            Console.WriteLine($"{i}: {new string('*', percentage)}");
+            int percentage = results[iNum] * 100 / numRolls;
+            Console.WriteLine($"{iNum}: {new string('*', percentage)}");
         }
 
         Console.WriteLine("\nThank you for using the dice throwing simulator. Goodbye!");
@@ -36,9 +36,9 @@ class DiceRoller
 
     public int[] SimulateRolls(int numRolls)
     {
-        int[] results = new int[13]; // Index 0 is not used
+        int[] results = new int[13];
 
-        for (int i = 0; i < numRolls; i++)
+        for (int iNum = 0; iNum < numRolls; iNum++)
         {
             int dice1 = random.Next(1, 7);
             int dice2 = random.Next(1, 7);
